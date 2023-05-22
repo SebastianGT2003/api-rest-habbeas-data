@@ -17,7 +17,8 @@ const eschemausuario= new eschema({
     correo: {type: String, unique: true},
     contraseña: {type: String, requiere: true},
     aceptaterminos:{type: Boolean, requiere: true},
-    fecha_actual:{type: String, requiere:true }
+    fecha_actual:{type: String, requiere:true },
+    publicidad:{type:String, require:true}
 
 });
 
@@ -70,7 +71,7 @@ router.get('/ejemplo', (req, res)=>{
 /// Peticion post para registrar un nuevo usuario
 router.post('/registrar', (req, res )=>{
 
-    const{nombre, correo, contraseña, direccion, celular,fecha_n,tipo_documento,numerodoc,aceptaterminos,fecha_actual}=req.body;
+    const{nombre, correo, contraseña, direccion, celular,fecha_n,tipo_documento,numerodoc,aceptaterminos,fecha_actual,publicidad}=req.body;
 
     const nuevousuario=ModeloUsuario({
         nombre: nombre,
@@ -82,7 +83,8 @@ router.post('/registrar', (req, res )=>{
         tipo_documento:tipo_documento,
         numerodoc:numerodoc,
         aceptaterminos:aceptaterminos,
-        fecha_actual:fecha_actual
+        fecha_actual:fecha_actual,
+        publicidad:publicidad
 
 
     })
