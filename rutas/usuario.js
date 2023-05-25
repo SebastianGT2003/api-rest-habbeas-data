@@ -136,3 +136,15 @@ router.post('/autenticacion',(req, res )=>{
 
 
 })
+
+
+router.get('/usuarios_registrados', async (req, res) => {
+    try {
+      const users = await ModeloUsuario.find();
+      res.status(200).send(users);
+    } catch (error) {
+      console.error('Error al obtener los usuarios:', error);
+      res.status(500).json({ error: 'Error interno del servidor' });
+    }
+  });
+
