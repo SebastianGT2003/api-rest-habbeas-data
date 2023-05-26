@@ -1,6 +1,5 @@
 const express= require('express')
 const app = express()
-const controllers = require("./Controladores")
 
 //Importar conexion MongoDB
 const archiboBD= require('./conexion')
@@ -17,7 +16,6 @@ app.use(bodyParser.urlencoded({extended:'true'}))
 app.use('/api/usuario', rutausuario)
 
 
-app.get("/products", controllers.Productos);
 
 //Configurar server basico
 
